@@ -83,9 +83,12 @@ the **server's** timezone — check with `timedatectl`.
 
 Remember that cron users the server timezone, not yours, so adjust accordingly
 ```cron
-0  9  * * *  cd /path/to/daily-reminders-agent && /usr/bin/python3 send_reminder.py >> reminder.log 2>&1
-0  14 * * *  cd /path/to/daily-reminders-agent && /usr/bin/python3 send_reminder.py >> reminder.log 2>&1
-0  19 * * *  cd /path/to/daily-reminders-agent && /usr/bin/python3 send_reminder.py >> reminder.log 2>&1
+0  9  * * *  cd /path/to/daily-reminders-agent && set -a && . ./.env && set +a && /usr/bin/python3 send_reminder.py >> reminder.log 2>&1
+
+0  14  * * *  cd /path/to/daily-reminders-agent && set -a && . ./.env && set +a && /usr/bin/python3 send_reminder.py >> reminder.log 2>&1
+
+0  19  * * *  cd /path/to/daily-reminders-agent && set -a && . ./.env && set +a && /usr/bin/python3 send_reminder.py >> reminder.log 2>&1
+
 ```
 
 That sends one random reminder in the morning, afternoon, and evening.
