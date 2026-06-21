@@ -116,3 +116,7 @@ row. (If your list is shorter than that, it just picks randomly.)
   means a bad `GIST_RAW_URL`; an `ntfy send failed` line means a bad topic or
   no network. The script exits non-zero on failure so cron mail flags it too.
 - **Wrong times:** cron uses the server timezone, not yours.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
