@@ -1,0 +1,5 @@
+.reminder_state.json
+reminder.log
+__pycache__/
+*.pyc
+.env
